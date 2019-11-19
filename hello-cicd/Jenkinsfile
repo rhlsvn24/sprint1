@@ -9,9 +9,12 @@ pipeline {
     WORKER = "Micro"
   }
   stages {
-	dir ('hello-cicd') {
-		sh 'pwd'
-	}
+	  
+stage('CD') {
+      steps {
+            bat 'cd hello-cicd'
+      }
+    }
 	
     stage('Build') {
       steps {
