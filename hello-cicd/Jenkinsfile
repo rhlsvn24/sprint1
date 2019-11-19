@@ -13,11 +13,13 @@ pipeline {
 stage('CD') {
       steps {
             bat 'cd hello-cicd'
+	    echo %cd%
       }
     }
 	
     stage('Build') {
       steps {
+	    echo %cd%
             bat 'mvn -B -U -e -V clean -DskipTests package'
       }
     }
