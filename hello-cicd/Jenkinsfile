@@ -9,6 +9,10 @@ pipeline {
     WORKER = "Micro"
   }
   stages {
+	dir ('hello-cicd') {
+		sh 'pwd'
+	}
+	
     stage('Build') {
       steps {
             bat 'mvn -B -U -e -V clean -DskipTests package'
